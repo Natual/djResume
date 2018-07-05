@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>党费啦</title>
+</head>
+<body>
+    <div style="width: 90%; margin: 0 auto">
+        <form action="fee_info" method="POST" enctype="multipart/form-data" style="margin-top: 50px;">
+        请输入您的员工号：
+        <input  type="text" name="staff_no" style="height: 30px; width: 100%; margin-top: 20px; ">
+        {% csrf_token %}
+        <input type="submit" value="确认" style="margin-top: 50px; height: 40px; width: 100%; border: 0px; border-radius: 6px; background: green; color: white;">
+    </form>
+    </div>
+
+</body>
+</html>

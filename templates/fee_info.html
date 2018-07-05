@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+    <title>信息确认</title>
+</head>
+<body>
+    <div style="width:90%;margin:0 auto">
+        <div style="margin-top: 30px">
+            <label style="color: #666666;">本次应缴:</label>
+            <label style="font-size: 34pt">{{ fee_amount }}</label>
+        </div>
+        <div style="margin-top: 10px">
+            <label style="color: #666666;">缴费单位:</label>
+            <label>{{ apart }}</label>
+        </div>
+        <div style="margin-top: 10px">
+            <label style="color: #666666;">缴费方式:</label>
+            <label>{{ sub_method }}</label>
+        </div>
+
+         <div style="margin-top: 10px">
+            <label style="color: #666666;">月缴费金额:</label>
+            <label>{{ monthly_fee }} 元 </label>
+        </div>
+
+        <div style="margin-top: 10px">
+            <label style="color: #666666;">员工号:
+                <span id="staff_no">{{ staff_no }}</span>
+            </label>
+        </div>
+
+        <div style="margin-top: 10px">
+            <label style="color: #666666;">员工姓名:</label>
+            <label>{{ staff_name }}  </label>
+        </div>
+
+       <div style="margin-top: 10px">
+            <label style="color: #666666;">职务和职级:</label>
+            <label>{{ staff }} </label>
+        </div>
+
+        </div>
+
+        <div style="width: 90%; margin: 0 auto">
+            <form action="https://payjs.cn/api/cashier" method="POST">
+                <input type="hidden" value={{ mchid }} name='mchid' >
+                <input type="hidden" value={{ total_fee }} name='total_fee' >
+                <input type="hidden" value={{ out_trade_no }} name='out_trade_no' >
+                <input type="hidden" value={{ callback_url }} name='callback_url' >
+                <input type="hidden" value={{ notify_url }} name='notify_url' >
+                <input type="hidden" value={{ sign }} name='sign' >
+
+                <input type="submit" value="缴费" style="margin-top: 50px; height: 40px; width: 100%; border: 0px; border-radius: 6px; background: green; color: white;">
+            </form>
+        </div>
+    </div>
+
+
+</body>
+</html>
